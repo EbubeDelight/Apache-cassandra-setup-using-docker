@@ -1,0 +1,1 @@
+This repository provides a foundation or guideline for starting out with apache cassandra. It contains details about apache cassandra its architecture, usage and explains usecases for apache cassandra. It contains files and steps for setting up cassandra cluster using docker compose file and manually

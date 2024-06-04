@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  cassandra:
+    image: cassandra:latest
+    container_name: cassandra
+    ports:
+      - "9042:9042"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=cassandra-cluster
+      - CASSANDRA_NUM_TOKENS=256
+      - CASSANDRA_DC=dc1
+      - CASSANDRA_RACK=rack1
+      - CASSANDRA_SEEDS=cassandra
+  cassandra-node1:
+    image: cassandra:latest
+    container_name: cassandra-node1
+    ports:
+      - "9142:9042"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=cassandra-cluster
+      - CASSANDRA_NUM_TOKENS=256
+      - CASSANDRA_DC=dc1
+      - CASSANDRA_RACK=rack1
+      - CASSANDRA_SEEDS=cassandra
+  cassandra-node2:
+    image: cassandra:latest
+    container_name: cassandra-node2
+    ports:
+      - "9242:9042"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=cassandra-cluster
+      - CASSANDRA_NUM_TOKENS=256
+      - CASSANDRA_DC=dc1
+      - CASSANDRA_RACK=rack1
+      - CASSANDRA_SEEDS=cassandra
